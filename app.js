@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-  $(".add-text-btn").on("click", function(){
+  $("#add-text-btn").on("click", function(){
 
     // store values
     let inputKey = $(".user-input-title").val();
@@ -21,7 +21,7 @@ $(document).ready(function() {
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
 
-    $(".display-item").on("click", function(e){
+    $("#display-item").on("click", function(e){
       // plop the key:value back into the input boxes
 
       // get the values from the the divs?
