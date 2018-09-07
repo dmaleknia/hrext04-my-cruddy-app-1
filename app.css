@@ -56,7 +56,7 @@ a {
   text-decoration: none;
   color: #6AFFF7;
 }
-.buttons {
+.button {
   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   letter-spacing: -1px; 
   display: flex;
@@ -69,4 +69,11 @@ a {
   border: thin;
   color: white;
   background-color: black;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-content: center;  
+  flex-direction: column;
+  align-items: center;
 }
