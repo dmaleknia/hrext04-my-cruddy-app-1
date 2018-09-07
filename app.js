@@ -1,15 +1,38 @@
+function getColor() {
+  return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+}
+
+function randomizeSpans() {
+  $('span').each(function() {
+    $(this).css('color', getColor());
+  });
+}
+
+function randomizeHeadings() {
+  $('h1').each(function() {
+    $(this).css('color', getColor());
+  });
+}
+
+var span;
+
+var colors = setInterval(function() {
+  span === 0 ? span = 1 : span = 0;
+  span === 0 ? randomizeSpans() : randomizeHeadings();
+}, 1000);
+
 $(document).ready(function() {
 
 
   $("#add-text-btn").on("click", function(){
 
     // store values
-    let inputKey = $(".user-input-title").val();
-    let inputValue = $(".user-input-body").val();
+    let inputKey = $("#user-input-title").val();
+    let inputValue = $("#user-input-body").val();
 
     // clear values
-    $(".user-input-title").val("");
-    $(".user-input-body").val("");
+    $("#user-input-title").val("");
+    $("#user-input-body").val("");
 
     console.log(inputKey, inputValue);
 
@@ -29,8 +52,8 @@ $(document).ready(function() {
       localStorage.getItem(e.target.dataset.storageKey); // user-input-body
 
       // set those values in the form fields
-      $(".user-input-title").val(e.target.dataset.storageKey);
-      $(".user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
+      $("#user-input-title").val(e.target.dataset.storageKey);
+      $("#user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
     });
 
   });
