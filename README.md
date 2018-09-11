@@ -1,2 +1,2 @@
 # hrext04-my-cruddy-app
-A basic CRUD app built on the front end only
+A basic CRUD app built on the front end only as part of HREXT04. 
