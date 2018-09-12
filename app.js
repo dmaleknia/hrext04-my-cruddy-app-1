@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // Go through each property in localStorage to display the to do list on page refresh/start-up
   for (var key in localStorage) {
     if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
       let itemHtml = '<div class="display-item" data-storage-key="'+key+'"> ' + key + ' - ' + '<span class="description">' + localStorage.getItem(key) + '</span></div>';
@@ -17,8 +18,10 @@ $(document).ready(function() {
     $("#user-input-title").val("");
     $("#user-input-body").val("");
 
+    // add new property to local storage from input boxes
     localStorage.setItem(inputKey, inputValue);
 
+    // add inputKey and inputValue to the #display container
     let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></div>';
     $(itemHtml).appendTo("#display");
 
@@ -31,6 +34,7 @@ $(document).ready(function() {
      $("#user-input-body").val("");
    });
 
+   // clear local storage and refresh the #display container
    $("#clear-all-btn").on("click", function() {
      localStorage.clear();
      $("#user-input-title").val("");
