@@ -77,6 +77,14 @@ $(document).ready(function() {
      // refresh from storage?
    });
 
+   $(".clear-all-btn").on("click", function() {
+     localStorage.clear(); // grab the title and plop here
+     $(".user-input-title").val("");
+     $(".user-input-body").val("");
+     // clearing display? what if I have multiple items?
+     // after item is removed from local storage, redisplay items from local storage
+     // refresh from storage?
+   });
 
    // iterative approach to adding items
    // store data as stringified array of objects
