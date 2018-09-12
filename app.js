@@ -1,26 +1,3 @@
-function getColor() {
-  return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-}
-
-function randomizeSpans() {
-  $('span').each(function() {
-    $(this).css('color', getColor());
-  });
-}
-
-function randomizeHeadings() {
-  $('h1').each(function() {
-    $(this).css('color', getColor());
-  });
-}
-
-var span;
-
-var colors = setInterval(function() {
-  span === 0 ? span = 1 : span = 0;
-  span === 0 ? randomizeSpans() : randomizeHeadings();
-}, 1000);
-
 $(document).ready(function() {
 
   for (var key in localStorage) {
@@ -62,3 +39,27 @@ $(document).ready(function() {
    });
 
 });
+
+// Random heading and text colors
+function getColor() {
+  return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+}
+
+function randomizeSpans() {
+  $('span').each(function() {
+    $(this).css('color', getColor());
+  });
+}
+
+function randomizeHeadings() {
+  $('h1').each(function() {
+    $(this).css('color', getColor());
+  });
+}
+
+var span;
+
+var colors = setInterval(function() {
+  span === 0 ? span = 1 : span = 0;
+  span === 0 ? randomizeSpans() : randomizeHeadings();
+}, 1000);
