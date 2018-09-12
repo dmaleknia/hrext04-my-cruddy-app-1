@@ -23,6 +23,13 @@ var colors = setInterval(function() {
 
 $(document).ready(function() {
 
+  for (var key in localStorage) {
+    if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
+      let itemHtml = '<div class="display-item" data-storage-key="'+key+'"> ' + key + ' ' +  localStorage.getItem(key) + '</div>';
+      $(itemHtml).appendTo("#display");
+    }
+  }
+
 
   $("#add-text-btn").on("click", function(){
 
@@ -78,12 +85,10 @@ $(document).ready(function() {
    });
 
    $("#clear-all-btn").on("click", function() {
-     localStorage.clear(); // grab the title and plop here
+     localStorage.clear();
      $("#user-input-title").val("");
      $("#user-input-body").val("");
-     // clearing display? what if I have multiple items?
-     // after item is removed from local storage, redisplay items from local storage
-     // refresh from storage?
+     $("#display").html("");
    });
 
    // iterative approach to adding items
