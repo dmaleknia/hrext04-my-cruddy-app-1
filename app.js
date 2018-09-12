@@ -67,7 +67,7 @@ $(document).ready(function() {
    //   $(".display").text(localStorage.getItem("testStorage"));
    // });
 
-   $(".del-text-btn").on("click", function() {
+   $("#del-text-btn").on("click", function() {
      alert('item deleted? check the console'); // maybe change to a window.confirm
      localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
      $(".user-input-title").val("");
@@ -77,7 +77,7 @@ $(document).ready(function() {
      // refresh from storage?
    });
 
-   $(".clear-all-btn").on("click", function() {
+   $("#clear-all-btn").on("click", function() {
      localStorage.clear(); // grab the title and plop here
      $(".user-input-title").val("");
      $(".user-input-body").val("");
