@@ -39,7 +39,7 @@ $(document).ready(function() {
     localStorage.setItem(inputKey, inputValue);
     // data-
     let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
-    $(".display").html(itemHtml);
+    $("#display").html(itemHtml);
     //console.log(localStorage);
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
@@ -69,9 +69,9 @@ $(document).ready(function() {
 
    $("#del-text-btn").on("click", function() {
      alert('item deleted? check the console'); // maybe change to a window.confirm
-     localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
-     $(".user-input-title").val("");
-     $(".user-input-body").val("");
+     localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
+     $("#user-input-title").val("");
+     $("#user-input-body").val("");
      // clearing display? what if I have multiple items?
      // after item is removed from local storage, redisplay items from local storage
      // refresh from storage?
@@ -79,8 +79,8 @@ $(document).ready(function() {
 
    $("#clear-all-btn").on("click", function() {
      localStorage.clear(); // grab the title and plop here
-     $(".user-input-title").val("");
-     $(".user-input-body").val("");
+     $("#user-input-title").val("");
+     $("#user-input-body").val("");
      // clearing display? what if I have multiple items?
      // after item is removed from local storage, redisplay items from local storage
      // refresh from storage?
