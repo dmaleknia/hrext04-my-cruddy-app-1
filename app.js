@@ -39,7 +39,7 @@ $(document).ready(function() {
     localStorage.setItem(inputKey, inputValue);
     // data-
     let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
-    $("#display").html(itemHtml);
+    $(itemHtml).appendTo("#display");
     //console.log(localStorage);
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
