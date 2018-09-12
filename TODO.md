@@ -53,14 +53,14 @@
   mouse over to see details
   ability to select and delete multiple items (checkbox?)
   add status/priorty and allow for sorting based on status/priority
-  (9) upload files/images 
+  (9) upload files/images
   delete item confirmation
   fillet edges of boxes
   (2) font changes/choices? (google fonts)
   Highlight based on status/priority/due date
   (2) strike-through completed/deleted items (styling)
   add more items button, that shows another input section allowing for multiple items to be added at once
-  
+
 
 
 
