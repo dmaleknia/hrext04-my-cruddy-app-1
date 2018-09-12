@@ -25,7 +25,7 @@ $(document).ready(function() {
 
   for (var key in localStorage) {
     if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
-      let itemHtml = '<div class="display-item" data-storage-key="'+key+'"> ' + key + ' ' +  localStorage.getItem(key) + '</div>';
+      let itemHtml = '<div class="display-item" data-storage-key="'+key+'"> ' + key + ' - ' + '<span class="description">' + localStorage.getItem(key) + '</span></div>';
       $(itemHtml).appendTo("#display");
     }
   }
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     localStorage.setItem(inputKey, inputValue);
 
-    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
+    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></div>';
     $(itemHtml).appendTo("#display");
 
   });
