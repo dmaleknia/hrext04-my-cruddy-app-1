@@ -51,17 +51,17 @@ $(document).ready(function() {
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
 
-    $("#display-item").on("click", function(e){
-      // plop the key:value back into the input boxes
+    // $("#display-item").on("click", function(e){
+    //   // plop the key:value back into the input boxes
 
-      // get the values from the the divs?
-      console.log("key=> ", e.target.dataset.storageKey); // user-input-title
-      localStorage.getItem(e.target.dataset.storageKey); // user-input-body
+    //   // get the values from the the divs?
+    //   console.log("key=> ", e.target.dataset.storageKey); // user-input-title
+    //   localStorage.getItem(e.target.dataset.storageKey); // user-input-body
 
-      // set those values in the form fields
-      $("#user-input-title").val(e.target.dataset.storageKey);
-      $("#user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
-    });
+    //   // set those values in the form fields
+    //   $("#user-input-title").val(e.target.dataset.storageKey);
+    //   $("#user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
+    // });
 
   });
 
