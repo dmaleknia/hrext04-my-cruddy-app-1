@@ -28,7 +28,7 @@ $(document).ready(function() {
   });
 
    $("#del-text-btn").on("click", function() {
-     alert('item deleted? check the console'); // maybe change to a window.confirm
+     window.confirm('Task deleted!'); // maybe change to a window.confirm
      localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
      $("#user-input-title").val("");
      $("#user-input-body").val("");
