@@ -36,7 +36,6 @@ refreshPage();
     } else {
        $(this).addClass( "checked" );
      }
-     localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
      $("#user-input-title").val("");
      $("#user-input-body").val("");
    });
@@ -51,7 +50,6 @@ refreshPage();
     } else {
        $(this).addClass( "checked" );
      }
-     localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
      $("#user-input-title").val("");
      $("#user-input-body").val("");
    });
@@ -74,35 +72,27 @@ refreshPage();
 
 });
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
 
+// Random heading and text colors
+function getColor() {
+  return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+}
 
-// // Random heading and text colors
-// function getColor() {
-//   return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-// }
+function randomizeSpans() {
+  $('span').each(function() {
+    $(this).css('color', getColor());
+  });
+}
 
-// function randomizeSpans() {
-//   $('span').each(function() {
-//     $(this).css('color', getColor());
-//   });
-// }
+function randomizeHeadings() {
+  $('h1').each(function() {
+    $(this).css('color', getColor());
+  });
+}
 
-// function randomizeHeadings() {
-//   $('h1').each(function() {
-//     $(this).css('color', getColor());
-//   });
-// }
+var span;
 
-// var span;
-
-// var colors = setInterval(function() {
-//   span === 0 ? span = 1 : span = 0;
-//   span === 0 ? randomizeSpans() : randomizeHeadings();
-// }, 1000);
+var colors = setInterval(function() {
+  span === 0 ? span = 1 : span = 0;
+  span === 0 ? randomizeSpans() : randomizeHeadings();
+}, 1000);
