@@ -56,7 +56,6 @@ refreshPage();
         alert("Please enter a valid task name to delete.")
       } else {
       if ($("#user-input-title").val() !== "") {
-        window.confirm('Task deleted!');
         localStorage.removeItem( $('#user-input-title').val() );
         $("#user-input-title").val("");
         $("#user-input-body").val("");
