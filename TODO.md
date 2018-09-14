@@ -30,7 +30,7 @@
   * denotes on my to do for the project
   2.5 days = 20 hours
 
-  ### difficulty scale 1-10. 1 meaning it's already finished 10 meaning what?!?!
+  ### difficulty scale 1-10
 
   5 = 3 hours
   7 = 5 hours
