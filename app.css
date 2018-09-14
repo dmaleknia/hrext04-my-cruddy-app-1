@@ -176,4 +176,5 @@ ul li.checked::before {
   background-color: black;
   margin: 5px;
   text-align: center;
+  width: 100%;
 }
