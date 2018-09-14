@@ -18,10 +18,10 @@ refreshPage();
     // Store values from input boxes
     let inputKey = $("#user-input-title").val();
     let inputValue = $("#user-input-body").val();
+
     if ($("#user-input-title").val() === "") {
       alert("Task needs a name.")
-    }
-    if ($("#user-input-title").val() !== "") {
+    } else {
       // Clear values from input boxes
       $("#user-input-title").val("");
       $("#user-input-body").val("");
