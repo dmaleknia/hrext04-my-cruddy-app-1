@@ -12,6 +12,7 @@ var refreshPage = function() {
 }
 refreshPage();
 
+  // Add an item to the list
   $("#add-text-btn").on("click", function(){
 
     // Store values from input boxes
@@ -71,7 +72,7 @@ function getColor() {
 }
 
 function randomizeSpans() {
-  $('span').each(function() {
+  $('li').each(function() {
     $(this).css('color', getColor());
   });
 }
@@ -82,9 +83,9 @@ function randomizeHeadings() {
   });
 }
 
-var span;
+var swtch;
 
 var colors = setInterval(function() {
-  span === 0 ? span = 1 : span = 0;
-  span === 0 ? randomizeSpans() : randomizeHeadings();
-}, 1500);
+  swtch === 0 ? swtch = 1 : swtch = 0;
+  swtch === 0 ? randomizeSpans() : randomizeHeadings();
+}, 1300);
