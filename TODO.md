@@ -16,7 +16,7 @@
 
    - [√] UI/UX
      - [√] Confirmation of delete/update
-     - [ ] Sortable list
+     - [?] Sortable list
      - [√] Animations/Transitions
 
   - [√] Library Considerations
