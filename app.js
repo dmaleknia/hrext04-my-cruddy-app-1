@@ -30,7 +30,6 @@ refreshPage();
     $(itemHtml).appendTo("#display");
 
     $(".display-item").on("click", function() {
-    console.log(this.className);
     if (this.className === "display-item checked") {
       $(this).removeClass("checked");
     } else {
@@ -44,7 +43,6 @@ refreshPage();
 
   // Intention: when a display item is clicked, I want to add the class "checked" to it, so that styling is applied
     $(".display-item").on("click", function() {
-      console.log(this.className);
       if (this.className === "display-item checked") {
         $(this).removeClass("checked");
       } else {
@@ -95,4 +93,4 @@ var span;
 var colors = setInterval(function() {
   span === 0 ? span = 1 : span = 0;
   span === 0 ? randomizeSpans() : randomizeHeadings();
-}, 1000);
+}, 1500);
