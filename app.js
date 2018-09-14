@@ -29,6 +29,18 @@ refreshPage();
     let itemHtml = '<li class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></li>';
     $(itemHtml).appendTo("#display");
 
+     $(".display-item").on("click", function() {
+    console.log(this.className);
+    if (this.className === "display-item checked") {
+      $(this).removeClass("checked");
+    } else {
+       $(this).addClass( "checked" );
+     }
+     localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
+     $("#user-input-title").val("");
+     $("#user-input-body").val("");
+   });
+
   });
 
   // Intention: when a display item is clicked, I want to add the class "checked" to it, so that styling is applied
