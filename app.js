@@ -73,6 +73,10 @@ refreshPage();
       $("#display").html("");
     });
 
+    $("#show-hidden").click(function(){
+      location.reload(true);
+    });
+
 });
 
 
