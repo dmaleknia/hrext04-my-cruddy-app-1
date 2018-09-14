@@ -94,4 +94,4 @@ var swtch;
 var colors = setInterval(function() {
   swtch === 0 ? swtch = 1 : swtch = 0;
   swtch === 0 ? randomizeSpans() : randomizeHeadings();
-}, 1300);
+}, 1000);
