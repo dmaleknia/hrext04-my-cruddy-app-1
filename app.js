@@ -43,7 +43,7 @@ refreshPage();
 
     // Hide a list item on double click
     $("#display").on("dblclick", '*', function() {
-      $(this).hide();
+      $(this).hide("slow");
     });
 
     // Delete a list item
