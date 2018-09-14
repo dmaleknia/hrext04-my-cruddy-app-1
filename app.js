@@ -29,7 +29,7 @@ refreshPage();
     let itemHtml = '<li class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></li>';
     $(itemHtml).appendTo("#display");
 
-     $(".display-item").on("click", function() {
+    $(".display-item").on("click", function() {
     console.log(this.className);
     if (this.className === "display-item checked") {
       $(this).removeClass("checked");
@@ -43,32 +43,32 @@ refreshPage();
   });
 
   // Intention: when a display item is clicked, I want to add the class "checked" to it, so that styling is applied
-   $(".display-item").on("click", function() {
-    console.log(this.className);
-    if (this.className === "display-item checked") {
-      $(this).removeClass("checked");
-    } else {
-       $(this).addClass( "checked" );
-     }
-     $("#user-input-title").val("");
-     $("#user-input-body").val("");
-   });
+    $(".display-item").on("click", function() {
+      console.log(this.className);
+      if (this.className === "display-item checked") {
+        $(this).removeClass("checked");
+      } else {
+         $(this).addClass( "checked" );
+       }
+       $("#user-input-title").val("");
+       $("#user-input-body").val("");
+    });
 
-   $("#del-text-btn").on("click", function() {
-     window.confirm('Task deleted!'); // maybe change to a window.confirm
-     localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
-     $("#user-input-title").val("");
-     $("#user-input-body").val("");
-     refreshPage();
-   });
+    $("#del-text-btn").on("click", function() {
+      window.confirm('Task deleted!'); // maybe change to a window.confirm
+      localStorage.removeItem( $('#user-input-title').val() ); // grab the title and plop here
+      $("#user-input-title").val("");
+      $("#user-input-body").val("");
+      refreshPage();
+    });
 
-   // clear local storage and refresh the #display container
-   $("#clear-all-btn").on("click", function() {
-     localStorage.clear();
-     $("#user-input-title").val("");
-     $("#user-input-body").val("");
-     $("#display").html("");
-   });
+    // clear local storage and refresh the #display container
+    $("#clear-all-btn").on("click", function() {
+      localStorage.clear();
+      $("#user-input-title").val("");
+      $("#user-input-body").val("");
+      $("#display").html("");
+    });
 
 });
 
