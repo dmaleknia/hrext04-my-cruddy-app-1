@@ -19,7 +19,7 @@ refreshPage();
     let inputKey = $("#user-input-title").val();
     let inputValue = $("#user-input-body").val();
     if ($("#user-input-title").val() === "") {
-      alert("Task needs a name!")
+      alert("Task needs a name.")
     }
     if ($("#user-input-title").val() !== "") {
       // Clear values from input boxes
@@ -52,14 +52,18 @@ refreshPage();
 
     // Delete a list item
     $("#del-text-btn").on("click", function() {
+      if (localStorage.getItem($('#user-input-title').val()) === null) {
+        alert("Please enter a valid task name to delete.")
+      } else {
       if ($("#user-input-title").val() !== "") {
         window.confirm('Task deleted!');
         localStorage.removeItem( $('#user-input-title').val() );
         $("#user-input-title").val("");
         $("#user-input-body").val("");
         refreshPage();
-     }
-    });
+      }
+    }
+  });
 
     // Clear local storage and refresh the #display container
     $("#clear-all-btn").on("click", function() {
