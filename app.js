@@ -48,11 +48,13 @@ refreshPage();
 
     // Delete a list item
     $("#del-text-btn").on("click", function() {
-      window.confirm('Task deleted!');
-      localStorage.removeItem( $('#user-input-title').val() );
-      $("#user-input-title").val("");
-      $("#user-input-body").val("");
-      refreshPage();
+      if ($("#user-input-title").val() !== "") {
+        window.confirm('Task deleted!');
+        localStorage.removeItem( $('#user-input-title').val() );
+        $("#user-input-title").val("");
+        $("#user-input-body").val("");
+        refreshPage();
+     }
     });
 
     // Clear local storage and refresh the #display container
