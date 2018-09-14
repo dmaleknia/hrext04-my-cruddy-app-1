@@ -179,3 +179,7 @@ ul li.checked::before {
   text-align: center;
   width: 100%;
 }
+
+#display * {
+  word-wrap: break-word;
+}
