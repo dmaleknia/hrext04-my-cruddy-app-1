@@ -18,17 +18,21 @@ refreshPage();
     // Store values from input boxes
     let inputKey = $("#user-input-title").val();
     let inputValue = $("#user-input-body").val();
+    if ($("#user-input-title").val() === "") {
+      alert("Task needs a name!")
+    }
+    if ($("#user-input-title").val() !== "") {
+      // Clear values from input boxes
+      $("#user-input-title").val("");
+      $("#user-input-body").val("");
 
-    // Clear values from input boxes
-    $("#user-input-title").val("");
-    $("#user-input-body").val("");
+      // Add new property to local storage from input boxes
+      localStorage.setItem(inputKey, inputValue);
 
-    // Add new property to local storage from input boxes
-    localStorage.setItem(inputKey, inputValue);
-
-    // Add inputKey and inputValue to the #display container
-    let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></li>';
-    $(itemHtml).appendTo("#display").show('slow');
+      // Add inputKey and inputValue to the #display container
+      let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></li>';
+      $(itemHtml).appendTo("#display").show('slow');
+  }
 
   });
 
