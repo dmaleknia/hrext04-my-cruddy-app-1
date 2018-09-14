@@ -5,8 +5,8 @@ var refreshPage = function() {
   $("#display").html("");
   for (var key in localStorage) {
     if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
-      let itemHtml = '<li class="display-item" data-storage-key="'+key+'"> ' + key + ' - ' + '<span class="description">' + localStorage.getItem(key) + '</span></li>';
-      $(itemHtml).appendTo("#display");
+      let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+key+'"> ' + key + ' - ' + '<span class="description">' + localStorage.getItem(key) + '</span></li>';
+      $(itemHtml).appendTo("#display").show('slow');
     }
   }
 }
