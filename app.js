@@ -32,7 +32,7 @@ refreshPage();
       // Add inputKey and inputValue to the #display container
       let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></li>';
       $(itemHtml).appendTo("#display").show('slow');
-  }
+    }
 
   });
 
