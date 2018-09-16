@@ -1,15 +1,40 @@
 $(document).ready(function() {
 
-  // Go through each property in localStorage to display the to do list on page refresh/start-up
-var refreshPage = function() {
-  $("#display").html("");
-  for (var key in localStorage) {
-    if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
-      let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+key+'"> ' + key + ' - ' + '<span class="description">' + localStorage.getItem(key) + '</span></li>';
-      $(itemHtml).appendTo("#display").show('slow');
+  var addCloseButton = function() {
+
+  // Create a "close" button and append it to each list item
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
+
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("display-item");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this;
+      div.style.display = "none";
     }
   }
 }
+
+  // Go through each property in localStorage to display the to do list on page refresh/start-up
+  var refreshPage = function() {
+    $("#display").html("");
+    for (var key in localStorage) {
+      if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
+        let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+key+'"> ' + key + ' - ' + '<span class="description">' + localStorage.getItem(key) + '</span></li>';
+        $(itemHtml).appendTo("#display").show('slow');
+      }
+    }
+    addCloseButton();
+  }
 refreshPage();
 
   // Add an item to the list
@@ -33,7 +58,7 @@ refreshPage();
       let itemHtml = '<li class="display-item" style="display: none;" data-storage-key="'+inputKey+'"> ' + inputKey + ' - ' + '<span class="description">' + localStorage.getItem(inputKey) + '</span></li>';
       $(itemHtml).appendTo("#display").show('slow');
     }
-
+    addCloseButton();
   });
 
    // Apply styling to clicked list items
